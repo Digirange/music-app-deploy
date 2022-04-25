@@ -1,5 +1,5 @@
-import NextImage from "next/image";
-import NextLink from "next/link";
+import NextImage from "next/image"
+import NextLink from "next/link"
 import {
   Box,
   List,
@@ -9,16 +9,16 @@ import {
   Center,
   LinkBox,
   LinkOverlay,
-} from "@chakra-ui/layout";
+} from "@chakra-ui/layout"
 import {
   MdHome,
   MdSearch,
   MdLibraryMusic,
   MdPlaylistAdd,
   MdFavorite,
-} from "react-icons/md";
-import { MenuIcon } from "@chakra-ui/react";
-import { usePlaylist } from "../lib/hooks";
+} from "react-icons/md"
+import { MenuIcon } from "@chakra-ui/react"
+import { usePlaylist } from "../lib/hooks"
 
 const navMenu = [
   {
@@ -36,7 +36,7 @@ const navMenu = [
     icon: MdLibraryMusic,
     route: "/library",
   },
-];
+]
 
 const musicMenu = [
   {
@@ -49,12 +49,12 @@ const musicMenu = [
     icon: MdFavorite,
     route: "/favorites",
   },
-];
+]
 
 // const playLists = new Array(30).fill(1).map((_, i) => `Playlist ${i + 1}`);
 
 const Sidebar = () => {
-  const { playlists } = usePlaylist();
+  const { playlists } = usePlaylist()
   return (
     <Box
       width="100%"
@@ -129,7 +129,7 @@ const Sidebar = () => {
         </Box>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

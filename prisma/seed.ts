@@ -1,8 +1,8 @@
-import { PrismaClient } from "@prisma/client";
-import bcrypt from "bcrypt";
-import { artistsData } from "./songsData";
+import { PrismaClient } from "@prisma/client"
+import bcrypt from "bcrypt"
+import { artistsData } from "./songsData"
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 const run = async () => {
   await Promise.all(
@@ -20,11 +20,11 @@ const run = async () => {
             })),
           },
         },
-      });
+      })
     })
-  );
+  )
 
-  const salt = bcrypt.genSaltSync();
+  const salt = bcrypt.genSaltSync()
   const user = await prisma.user.upsert({
     where: { email: "user@test.com" },
     update: {},
@@ -34,9 +34,9 @@ const run = async () => {
       firstName: "Marques",
       lastName: "Stewart",
     },
-  });
+  })
 
-  const songs = await prisma.song.findMany({});
+  const songs = await prisma.song.findMany({})
   await Promise.all(
     new Array(10).fill(1).map(async (_, i) => {
       return prisma.playlist.create({
@@ -51,16 +51,16 @@ const run = async () => {
             })),
           },
         },
-      });
+      })
     })
-  );
-};
+  )
+}
 
 run()
   .catch((e) => {
-    console.error(e);
-    process.exit(1);
+    console.error(e)
+    process.exit(1)
   })
   .finally(async () => {
-    await prisma.$disconnect();
-  });
+    await prisma.$disconnect()
+  })

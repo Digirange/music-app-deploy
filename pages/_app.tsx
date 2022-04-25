@@ -1,8 +1,8 @@
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { StoreProvider } from "easy-peasy";
-import PlayerLayout from "../componenets/playerLayout";
-import "reset-css";
-import { store } from "../lib/store";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { StoreProvider } from "easy-peasy"
+import PlayerLayout from "../componenets/playerLayout"
+import "reset-css"
+import { store } from "../lib/store"
 
 const theme = extendTheme({
   colors: {
@@ -30,7 +30,7 @@ const theme = extendTheme({
       },
     },
   },
-});
+})
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -45,7 +45,7 @@ const MyApp = ({ Component, pageProps }) => {
         )}
       </StoreProvider>
     </ChakraProvider>
-  );
-};
+  )
+}
 
-export default MyApp;
+export default MyApp

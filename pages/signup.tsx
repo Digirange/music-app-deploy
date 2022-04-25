@@ -1,9 +1,9 @@
-import AuthForm from "../componenets/authForm";
+import AuthForm from "../componenets/authForm"
 
 const Signup = () => {
-  return <AuthForm mode="signup" />;
-};
+  return <AuthForm mode="signup" />
+}
 
 Signup.authPage = true
 
-export default Signup;
+export default Signup
