@@ -66,7 +66,7 @@ import { auth } from "../lib/mutations"
             }}
           >
             <Link href="/signup">
-              <p>signup</p>
+              <a>signup</a>
             </Link>
           </Button> : null}
         </Box>
