@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { FC, useState } from "react"
 import { useSWRConfig } from "swr"
 import NextImage from "next/image"
+import Link from "next/link"
 import { auth } from "../lib/mutations"
 
   const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
@@ -53,8 +54,21 @@ import { auth } from "../lib/mutations"
               }}
             >
               {mode}
-            </Button>
+            </Button> 
           </form>
+          {mode === 'signin' ? <Button type="submit"
+            bg="green.500"
+            isLoading={isLoading}
+            sx={{
+              "&:hover": {
+                bg: "green.400",
+              },
+            }}
+          >
+            <Link href="/signup">
+              <p>signup</p>
+            </Link>
+          </Button> : null}
         </Box>
       </Flex>
     </Box>
